@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link rel="stylesheet" href="~/lib/normalize.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="page">
+    <div class="page__wrapper">
+        <header class="header">
+            <div class="container">
+                <a class="link button button--primary" asp-area="" asp-page="/Index">Main page</a>
+            </div>
+        </header>
+        <main class="main">
+            <div class="remove-wrapper">
+                <div class="remove-question">
+                    <p class="text remove-question__text">Really delete the item?</p>
+                    <div class="remove-question__bottom">
+                        <button class="button button--secondary remove">Delete</button>
+                        <button class="button button--secondary cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <section class="section">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <p class="text text--white"><span class="copyleft">&copy;</span> Copyleft. All rights not reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js"></script>
+
+    <script src="~/js/validator.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

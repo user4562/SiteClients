@@ -1,0 +1,30 @@
+﻿@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Create";
+}
+
+<form class="form" method="post">
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <div class="form__wrapper">
+        <label class="warning-label" for="firstName">
+            <input class="input" value="@Model.FirstName" type="text" name="firstName" id="firstName" required placeholder="First Name">
+        </label>
+        <label class="warning-label" for="lastName">
+            <input class="input" value="@Model.LastName" type="text" name="lastName" id="lastName" required placeholder="Last Name">
+        </label>
+        <label class="warning-label" for="birthDate">
+            <input class="input" value="@Model.BirthDate" type="date" name="birthDate" id="birthDate" required placeholder="Birth Date">
+        </label>
+        <label class="warning-label" for="phone">
+            <input class="input" value="@Model.Phone" type="tel" name="phone" id="phone" required placeholder="Phone">
+        </label>
+        <label class="warning-label" for="email">
+            <input class="input" value="@Model.Email" type="email" name="email" id="email" required placeholder="Email">
+        </label>
+
+    </div>
+    <button class="button button--secondary form__button" type="submit">Done</button>
+    <button class="button button--secondary form__button" type="reset">Reset</button>
+</form>
